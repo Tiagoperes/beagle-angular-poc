@@ -1,0 +1,6 @@
+<form (submit)="onSubmit()" (reset)="onReset()" [ngStyle]="style">
+  <ng-content></ng-content>
+  <div class="loading {{isLoading ? 'visible' : ''}}">
+    <mat-spinner></mat-spinner>
+  </div>
+</form>
