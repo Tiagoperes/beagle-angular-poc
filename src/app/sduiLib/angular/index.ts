@@ -1,18 +1,13 @@
-import createCoreServerDrivenUI from '../core'
+import createCoreBeagleUIService from '../core'
 import { DefaultSchema } from '../core/types'
-import { ServerDrivenUI } from './component'
-import createAngularComponentTree from './renderer'
-import { Config } from './types'
+import { BeagleRemoteView } from './component'
+import { BeagleAngularConfig } from './types'
 
-function createServerDrivenUI<Schema = DefaultSchema>(config: Config<Schema>) {
-  return createCoreServerDrivenUI({
-    ...config,
-    renderComponentTree: createAngularComponentTree,
-  })
+function createBeagleUIService<Schema = DefaultSchema>(config: BeagleAngularConfig<Schema>) {
+  return createCoreBeagleUIService(config)
 }
 
 export {
-  ServerDrivenUI,
-  createAngularComponentTree,
-  createServerDrivenUI,
+  BeagleRemoteView,
+  createBeagleUIService,
 }

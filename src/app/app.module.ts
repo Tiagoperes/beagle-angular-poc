@@ -7,18 +7,18 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { InlineSVGModule } from 'ng-inline-svg'
-import { ServerDrivenUI } from './sduiLib/angular'
+import { BeagleRemoteView } from './sduiLib/angular'
 import { BeagleAnchor } from './sduiLib/angular/directive'
 import { BeagleModule } from './beagle.module'
-import sdui from './sdui.config'
+import beagleUIService from './beagle.config'
 
-ServerDrivenUI.sdui = sdui
+BeagleRemoteView.beagleUIService = beagleUIService
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    ServerDrivenUI,
+    BeagleRemoteView,
     BeagleAnchor,
   ],
   imports: [

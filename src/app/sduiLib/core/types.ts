@@ -1,14 +1,13 @@
-type HttpMethod = 'post' | 'get' | 'put' | 'delete' | 'patch'
+export type HttpMethod = 'post' | 'get' | 'put' | 'delete' | 'patch'
 
-export interface Config<Schema = any> {
+type ComponentName<Schema> = keyof Schema | 'error' | 'loading'
+
+export interface BeagleConfig<Schema> {
   baseUrl: string,
   schemaUrl?: string,
   headers?: Record<string, string>,
-  renderError: () => any,
-  renderLoading: () => any,
-  renderComponentTree: (config: Config<Schema>, ui: UIElement<Schema>, options?: Record<string, any>) => any,
   components: {
-    [K in keyof Schema]: any
+    [K in ComponentName<Schema>]: any
   },
 }
 
@@ -19,17 +18,26 @@ export interface LoadParams {
   headers?: Record<string, string>,
 }
 
-export interface UIElement<Schema = any> {
-  type: keyof Schema,
-  children?: Array<UIElement<Schema>>,
+export interface BeagleUIElement<Schema> {
+  type: ComponentName<Schema>,
+  children?: Array<BeagleUIElement<Schema>>,
   key?: string,
   [key: string]: any,
 }
 
-export interface ServerDrivenUI {
-  createServerDrivenElement: (loadParams: LoadParams, options?: Record<string, any>) => any,
-  renderLoading: () => any,
-  getComponents: () => Record<string, any>,
+export interface XmlOptions<Schema> {
+  formatTagName: (componentName: ComponentName<Schema>) => string,
+  formatAttributeName: (name: string) => string,
+  formatAttributeValue: (value: any) => string,
+}
+
+export interface BeagleUIService<Schema = DefaultSchema, ConfigType = BeagleConfig<Schema>> {
+  loadBeagleUITree: (loadParams: LoadParams) => Promise<BeagleUIElement<Schema>>,
+  convertBeagleUiTreeToXml: (
+    uiTree: BeagleUIElement<Schema>,
+    options?: Partial<XmlOptions<Schema>>,
+  ) => string,
+  getConfig: () => ConfigType,
 }
 
 export type DefaultSchema = Record<string, Record<string, any>>

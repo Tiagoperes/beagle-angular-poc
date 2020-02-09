@@ -14,6 +14,8 @@ import { TitleComponent } from './components/title/title.component'
 import { TextComponent } from './components/text/text.component'
 import { ContainerComponent } from './components/container/container.component'
 import { ImageComponent } from './components/image/image.component'
+import { ErrorComponent } from './components/error/error.component'
+import { LoadingComponent } from './components/loading/loading.component'
 
 export const components = [
   CardComponent,
@@ -24,6 +26,8 @@ export const components = [
   TextComponent,
   ContainerComponent,
   ImageComponent,
+  ErrorComponent,
+  LoadingComponent,
 ]
 
 @NgModule({

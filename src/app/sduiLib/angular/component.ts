@@ -1,41 +1,65 @@
-import { Component, Input, ViewChild, AfterViewInit, ComponentFactoryResolver, ViewContainerRef, ComponentRef, Compiler, Injector, NgModuleRef, NgModule, OnDestroy } from '@angular/core'
+import {
+  Component,
+  Input,
+  ViewChild,
+  AfterViewInit,
+  ComponentRef,
+  Compiler,
+  Injector,
+  NgModuleRef,
+  NgModule,
+  OnDestroy,
+} from '@angular/core'
+import { BeagleAngularUIService } from './types'
 import { BeagleAnchor } from './directive'
-import { ServerDrivenUI as IServerDrivenUI } from './types'
-import { BeagleModule } from '../../beagle.module'
+import buildTemplateFromBeagleUITree from './templateBuilder'
+
+function last(array: Array<any>) {
+  return array[array.length - 1]
+}
 
 @Component({
-  selector: 'server-driven-ui',
+  selector: 'beagle-remote-view',
   template: '<ng-template beagle-anchor></ng-template>',
 })
-export class ServerDrivenUI implements AfterViewInit, OnDestroy {
-  static sdui: IServerDrivenUI
+export class BeagleRemoteView implements AfterViewInit, OnDestroy {
   @Input() public path: string
   @ViewChild(BeagleAnchor, {static: true}) anchor: BeagleAnchor
-  private cmpRef: ComponentRef<any>
+
+  static beagleUIService: BeagleAngularUIService
+  private dynamicComponentRef: ComponentRef<any>
 
   constructor(
-    private _compiler: Compiler,
-    private _injector: Injector,
-    private _m: NgModuleRef<any>,
+    private compiler: Compiler,
+    private injector: Injector,
+    private staticModule: NgModuleRef<any>,
   ) {}
 
   async ngAfterViewInit() {
-    const template = await ServerDrivenUI.sdui.createServerDrivenElement(
-      { path: this.path },
-      { resolver: this._m.componentFactoryResolver },
+    const beagleService = BeagleRemoteView.beagleUIService
+    const componentResolver = this.staticModule.componentFactoryResolver
+    const uiTree = await beagleService.loadBeagleUITree({ path: this.path })
+    const template = buildTemplateFromBeagleUITree(uiTree, beagleService, componentResolver)
+
+    const DynamicComponent = Component({ template })(class {})
+    const DynamicModule = NgModule({
+      declarations: [DynamicComponent],
+      imports: [beagleService.getConfig().module],
+    })(class {})
+
+    const factories = await this.compiler.compileModuleAndAllComponentsAsync(DynamicModule)
+    const dynamicComponentFactory = last(factories.componentFactories)
+    this.dynamicComponentRef = dynamicComponentFactory.create(
+      this.injector,
+      [],
+      null,
+      this.staticModule,
     )
-
-    const tmpCmp = Component({ template: template })(class {})
-    
-    const tmpModule = NgModule({ declarations: [tmpCmp], imports: [BeagleModule] })(class {});
-
-    const factories = await this._compiler.compileModuleAndAllComponentsAsync(tmpModule)
-    const f = factories.componentFactories[factories.componentFactories.length - 1]
-    this.cmpRef = f.create(this._injector, [], null, this._m)
-    this.anchor.viewContainerRef.insert(this.cmpRef.hostView)
+  
+    this.anchor.viewContainerRef.insert(this.dynamicComponentRef.hostView)
   }
 
   ngOnDestroy() {
-    if (this.cmpRef) this.cmpRef.destroy()
+    if (this.dynamicComponentRef) this.dynamicComponentRef.destroy()
   }
 }

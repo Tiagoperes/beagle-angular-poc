@@ -1,21 +1,13 @@
-import { ComponentFactoryResolver, Injector, ViewContainerRef, Type } from '@angular/core'
-import {
-  Config as CoreConfig,
-  ServerDrivenUI as CoreServerDrivenUI,
-  LoadParams,
-} from '../core/types'
+import { Type, ModuleWithProviders } from '@angular/core'
+import { BeagleConfig, BeagleUIService, DefaultSchema } from '../core/types'
 
-export interface Config<Schema = any> extends Omit<CoreConfig<Schema>, 'renderComponentTree'> {
-  components: {
+export interface BeagleAngularConfig<Schema> extends BeagleConfig<Schema> {
+  components: { error: Type<{}>, loading: Type<{}> } & {
     [K in keyof Schema]: Type<Schema[K]>
   },
+  module: Type<any> | ModuleWithProviders<{}> | any[],
 }
 
-export interface AngularRenderOptions {
-  // anchor: ViewContainerRef,
-  resolver: ComponentFactoryResolver,
-}
-
-export interface ServerDrivenUI extends CoreServerDrivenUI {
-  createServerDrivenElement: (loadParams: LoadParams, options: AngularRenderOptions) => any,
+export interface BeagleAngularUIService<Schema = DefaultSchema> extends BeagleUIService<Schema> {
+  getConfig: () => BeagleAngularConfig<Schema>
 }
