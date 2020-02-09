@@ -39,6 +39,7 @@ function createServerDrivenUI<Schema = DefaultSchema>(config: Config<Schema>): S
   return {
     createServerDrivenElement,
     renderLoading: config.renderLoading,
+    getComponents: () => config.components,
   }
 }
 

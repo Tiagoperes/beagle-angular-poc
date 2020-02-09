@@ -1,28 +1,22 @@
 <div class="page">
   <app-nav-bar></app-nav-bar>
   <div class="content">
-    <app-card>
-      <app-image [url]="'https://www.petlove.com.br/images/breeds/193436/profile/original/beagle-p.jpg'" [style]="{ width: '400px', height: '400px' }"></app-image>
-      <app-container [style]="{ display: 'flex', flexDirection: 'column', padding: '20px' }">
-        <app-title [value]="'Cãozinho bolado'"></app-title>
-        <app-text [value]="'Vamos ver se esse cão combina com você! Digite seu e-mail, nome e sua idade nos campos abaixo:'"></app-text>
-        <app-form
-          [style]="{ 'justify-content': 'space-between', 'flex-direction': 'column', flex: 1 }"
-          [url]="'https://webhook.site/59c13af0-f9cc-4a05-87d1-2630cb583be5'"
-          [method]="'post'"
-          [successMessage]="'Legal! Agora é só aguardar a resposta por e-mail!'"
-          [errorMessage]="'Ocorreu um erro ao enviar o formulário.'"
-        >
-          <app-container [style]="{ display: 'flex', flexDirection: 'column' }">
-            <app-input [name]="'email'" [placeholder]="'E-mail'" [validations]="['required', 'email']"></app-input>
-            <app-input [name]="'name'" [placeholder]="'Nome'" [validations]="['required']"></app-input>
-            <app-input [name]="'age'" [placeholder]="'Idade'" [validations]="['required', 'validateMajority']"></app-input>
-          </app-container>
-          <app-container [style]="{ display: 'flex', flexDirection: 'row', marginTop: '20px' }">
-            <app-button [title]="'Verificar'" [action]="'submit'" [primary]="true" style="margin-right: 15px"></app-button>
-            <app-button [title]="'Limpar'" [action]="'reset'"></app-button>
-          </app-container>
-        </app-form>
+    <app-card [style]="{flexDirection:'row'}">
+      <app-image [url]="'https://www.petlove.com.br/images/breeds/193436/profile/original/beagle-p.jpg'" [description]="'Foto do Cãozinho Bolado'" [style]="{width:'400px',height:'400px'}"></app-image>
+      <app-container [style]="{flexDirection:'column',padding:'20px'}">
+          <app-title [value]="'Cãozinho Bolado'"></app-title>
+          <app-text [style]="{fontSize:'12px'}" [value]="'Vamos ver se esse cão combina com você! Digite seu e-mail, nome e sua idade nos campos abaixo:'"></app-text>
+          <app-form [style]="{justifyContent:'space-between',flexDirection:'column',flex:1}" [url]="'https://webhook.site/59c13af0-f9cc-4a05-87d1-2630cb583be5'" [method]="'post'" [successMessage]="'Legal! Agora é só aguardar a resposta por e-mail!'" [errorMessage]="'Ocorreu um erro ao enviar o formulário.'">
+              <app-container [style]="{flexDirection:'column'}">
+                  <app-input [name]="'email'" [placeholder]="'E-mail'" [validations]="['required','email']"></app-input>
+                  <app-input [name]="'name'" [placeholder]="'Nome'" [validations]="['required']"></app-input>
+                  <app-input [name]="'age'" [placeholder]="'Idade'" [validations]="['required','validateMajority']"></app-input>
+              </app-container>
+              <app-container [style]="{flexDirection:'row',marginTop:'20px'}">
+                  <app-button [title]="'Verificar'" [action]="'submit'" [primary]="true" [style]="{marginRight:'15px'}"></app-button>
+                  <app-button [title]="'Limpar'" [action]="'reset'"></app-button>
+              </app-container>
+          </app-form>
       </app-container>
     </app-card>
   </div>

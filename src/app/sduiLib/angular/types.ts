@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injector, Type } from '@angular/core'
+import { ComponentFactoryResolver, Injector, ViewContainerRef, Type } from '@angular/core'
 import {
   Config as CoreConfig,
   ServerDrivenUI as CoreServerDrivenUI,
@@ -12,7 +12,7 @@ export interface Config<Schema = any> extends Omit<CoreConfig<Schema>, 'renderCo
 }
 
 export interface AngularRenderOptions {
-  injector: Injector,
+  // anchor: ViewContainerRef,
   resolver: ComponentFactoryResolver,
 }
 

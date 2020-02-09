@@ -29,6 +29,7 @@ export interface UIElement<Schema = any> {
 export interface ServerDrivenUI {
   createServerDrivenElement: (loadParams: LoadParams, options?: Record<string, any>) => any,
   renderLoading: () => any,
+  getComponents: () => Record<string, any>,
 }
 
 export type DefaultSchema = Record<string, Record<string, any>>
