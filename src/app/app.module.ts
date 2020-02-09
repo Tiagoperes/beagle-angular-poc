@@ -7,19 +7,14 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { InlineSVGModule } from 'ng-inline-svg'
-import { BeagleRemoteView } from './sduiLib/angular'
-import { BeagleAnchor } from './sduiLib/angular/directive'
-import { BeagleModule } from './beagle.module'
-import beagleUIService from './beagle.config'
-
-BeagleRemoteView.beagleUIService = beagleUIService
+import { BeagleModule, BeagleProvider } from './sduiLib/angular'
+import { beagleConfig } from './beagle.config'
+import { BeagleComponentsModule } from './beagle-components.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    BeagleRemoteView,
-    BeagleAnchor,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +23,14 @@ BeagleRemoteView.beagleUIService = beagleUIService
     BrowserAnimationsModule,
     InlineSVGModule.forRoot(),
     MatButtonModule,
+    BeagleComponentsModule,
     BeagleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(beagleProvider: BeagleProvider) {
+    beagleProvider.start(beagleConfig)
+  }
+}

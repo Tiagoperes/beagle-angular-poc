@@ -45,4 +45,4 @@ export const components = [
     MatProgressSpinnerModule,
   ],
 })
-export class BeagleModule { }
+export class BeagleComponentsModule { }

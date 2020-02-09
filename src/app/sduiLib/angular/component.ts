@@ -10,7 +10,7 @@ import {
   NgModule,
   OnDestroy,
 } from '@angular/core'
-import { BeagleAngularUIService } from './types'
+import { BeagleProvider } from './provider'
 import { BeagleAnchor } from './directive'
 import buildTemplateFromBeagleUITree from './templateBuilder'
 
@@ -23,20 +23,25 @@ function last(array: Array<any>) {
   template: '<ng-template beagle-anchor></ng-template>',
 })
 export class BeagleRemoteView implements AfterViewInit, OnDestroy {
-  @Input() public path: string
-  @ViewChild(BeagleAnchor, {static: true}) anchor: BeagleAnchor
+  @Input() public path: string = ''
+  @ViewChild(BeagleAnchor, {static: true}) anchor?: BeagleAnchor
 
-  static beagleUIService: BeagleAngularUIService
-  private dynamicComponentRef: ComponentRef<any>
+  private dynamicComponentRef?: ComponentRef<any>
 
   constructor(
+    private beagleProvider: BeagleProvider,
     private compiler: Compiler,
     private injector: Injector,
     private staticModule: NgModuleRef<any>,
   ) {}
 
   async ngAfterViewInit() {
-    const beagleService = BeagleRemoteView.beagleUIService
+    const beagleService = this.beagleProvider.getBeagleUIService()
+
+    if (!beagleService) {
+      throw new Error('Beagle: you must start the Beagle Provider before rendering a remote view!')
+    }
+    
     const componentResolver = this.staticModule.componentFactoryResolver
     const uiTree = await beagleService.loadBeagleUITree({ path: this.path })
     const template = buildTemplateFromBeagleUITree(uiTree, beagleService, componentResolver)
@@ -56,7 +61,7 @@ export class BeagleRemoteView implements AfterViewInit, OnDestroy {
       this.staticModule,
     )
   
-    this.anchor.viewContainerRef.insert(this.dynamicComponentRef.hostView)
+    this.anchor!.viewContainerRef.insert(this.dynamicComponentRef!.hostView)
   }
 
   ngOnDestroy() {

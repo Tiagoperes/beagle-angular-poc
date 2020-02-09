@@ -1,13 +1,26 @@
-import createCoreBeagleUIService from '../core'
-import { DefaultSchema } from '../core/types'
+import { NgModule } from '@angular/core'
 import { BeagleRemoteView } from './component'
-import { BeagleAngularConfig } from './types'
+import { BeagleAnchor } from './directive'
+import { BeagleProvider } from './provider'
+import { BeagleAngularConfig, BeagleAngularUIService } from './types'
 
-function createBeagleUIService<Schema = DefaultSchema>(config: BeagleAngularConfig<Schema>) {
-  return createCoreBeagleUIService(config)
-}
+@NgModule({
+  declarations: [
+    BeagleRemoteView,
+    BeagleAnchor,
+  ],
+  providers: [
+    BeagleProvider,
+  ],
+  exports: [
+    BeagleRemoteView,
+  ],
+})
+class BeagleModule { }
 
 export {
-  BeagleRemoteView,
-  createBeagleUIService,
+  BeagleModule,
+  BeagleProvider,
+  BeagleAngularConfig,
+  BeagleAngularUIService,
 }

@@ -1,6 +1,4 @@
-import { createBeagleUIService } from './sduiLib/angular'
-import Schema from './schema'
-import { BeagleModule } from './beagle.module'
+import { BeagleComponentsModule } from './beagle-components.module'
 import { CardComponent } from './components/card/card.component'
 import { FormComponent } from './components/form/form.component'
 import { InputComponent } from './components/input/input.component'
@@ -11,11 +9,13 @@ import { ContainerComponent } from './components/container/container.component'
 import { ImageComponent } from './components/image/image.component'
 import { ErrorComponent } from './components/error/error.component'
 import { LoadingComponent } from './components/loading/loading.component'
+import Schema from './schema'
+import { BeagleAngularConfig } from './sduiLib/angular'
 
-export default createBeagleUIService<Schema>({
+export const beagleConfig: BeagleAngularConfig<Schema> = {
   baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',
   schemaUrl: 'https://gist.githubusercontent.com/Tiagoperes/df605a1656f27f7c2685a3c55979029b/raw/b438cd2831b0032de37fe9a1b2c320f30a3d3c4f/beagle-schema.ts',
-  module: BeagleModule,
+  module: BeagleComponentsModule,
   components: {
     button: ButtonComponent,
     container: ContainerComponent,
@@ -28,4 +28,4 @@ export default createBeagleUIService<Schema>({
     error: ErrorComponent,
     loading: LoadingComponent,
   },
-})
+}
