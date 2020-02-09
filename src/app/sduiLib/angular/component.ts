@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, AfterViewInit, ComponentFactoryResolver, ViewContainerRef, ComponentRef, Compiler, Injector, NgModuleRef, NgModule } from '@angular/core'
+import { Component, Input, ViewChild, AfterViewInit, ComponentFactoryResolver, ViewContainerRef, ComponentRef, Compiler, Injector, NgModuleRef, NgModule, OnDestroy } from '@angular/core'
 import { BeagleAnchor } from './directive'
 import { ServerDrivenUI as IServerDrivenUI } from './types'
 import { BeagleModule } from '../../beagle.module'
@@ -7,10 +7,11 @@ import { BeagleModule } from '../../beagle.module'
   selector: 'server-driven-ui',
   template: '<ng-template beagle-anchor></ng-template>',
 })
-export class ServerDrivenUI implements AfterViewInit {
+export class ServerDrivenUI implements AfterViewInit, OnDestroy {
   static sdui: IServerDrivenUI
   @Input() public path: string
   @ViewChild(BeagleAnchor, {static: true}) anchor: BeagleAnchor
+  private cmpRef: ComponentRef<any>
 
   constructor(
     private _compiler: Compiler,
@@ -30,7 +31,11 @@ export class ServerDrivenUI implements AfterViewInit {
 
     const factories = await this._compiler.compileModuleAndAllComponentsAsync(tmpModule)
     const f = factories.componentFactories[factories.componentFactories.length - 1]
-    const cmpRef = f.create(this._injector, [], null, this._m)
-    this.anchor.viewContainerRef.insert(cmpRef.hostView)
+    this.cmpRef = f.create(this._injector, [], null, this._m)
+    this.anchor.viewContainerRef.insert(this.cmpRef.hostView)
+  }
+
+  ngOnDestroy() {
+    if (this.cmpRef) this.cmpRef.destroy()
   }
 }
