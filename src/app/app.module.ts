@@ -7,7 +7,7 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { InlineSVGModule } from 'ng-inline-svg'
-import { BeagleModule, BeagleProvider } from './sduiLib/angular'
+import { BeagleModule, BeagleProvider } from 'beagle-angular'
 import { beagleConfig } from './beagle.config'
 import { BeagleComponentsModule } from './beagle-components.module'
 

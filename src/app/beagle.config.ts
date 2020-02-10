@@ -10,7 +10,7 @@ import { ImageComponent } from './components/image/image.component'
 import { ErrorComponent } from './components/error/error.component'
 import { LoadingComponent } from './components/loading/loading.component'
 import Schema from './schema'
-import { BeagleAngularConfig } from './sduiLib/angular'
+import { BeagleAngularConfig } from 'beagle-angular'
 
 export const beagleConfig: BeagleAngularConfig<Schema> = {
   baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',

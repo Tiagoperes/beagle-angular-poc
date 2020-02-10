@@ -24,7 +24,8 @@
     "ng-inline-svg": "^9.2.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "beagle-angular": "https://github.com/Tiagoperes/beagle-angular.git#778bb2409dd21558e884f8c06c6f849e59d01bd7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.24",
