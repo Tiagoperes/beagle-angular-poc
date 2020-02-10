@@ -1641,8 +1641,9 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beagle-angular@../beagle-angular/dist/beagle-angular:
+"beagle-angular@https://github.com/Tiagoperes/beagle-angular.git#868d2f389a89955399e99e67e6b030dbefc0fb7d":
   version "0.0.0"
+  resolved "https://github.com/Tiagoperes/beagle-angular.git#868d2f389a89955399e99e67e6b030dbefc0fb7d"
   dependencies:
     beagle-core "https://github.com/Tiagoperes/beagle-core.git#b8a2a2ecb02a6bc84aaa0664a76887bd6681a597"
 
