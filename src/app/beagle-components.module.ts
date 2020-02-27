@@ -30,19 +30,21 @@ export const components = [
   LoadingComponent,
 ]
 
+export const imports = [
+  BrowserModule,
+  MatButtonModule,
+  MatInputModule,
+  HttpClientModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+]
+
 @NgModule({
   declarations: components,
   entryComponents: components,
   exports: components,
-  imports: [
-    BrowserModule,
-    MatButtonModule,
-    MatInputModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule,
-  ],
+  imports,
 })
 export class BeagleComponentsModule { }

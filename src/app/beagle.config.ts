@@ -1,4 +1,4 @@
-import { BeagleComponentsModule } from './beagle-components.module'
+import { imports, BeagleComponentsModule } from './beagle-components.module'
 import { CardComponent } from './components/card/card.component'
 import { FormComponent } from './components/form/form.component'
 import { InputComponent } from './components/input/input.component'
@@ -20,7 +20,7 @@ function logger(uiTree) {
 export const beagleConfig: BeagleAngularConfig<Schema> = {
   baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',
   schemaUrl: 'https://gist.githubusercontent.com/Tiagoperes/df605a1656f27f7c2685a3c55979029b/raw/b438cd2831b0032de37fe9a1b2c320f30a3d3c4f/beagle-schema.ts',
-  module: BeagleComponentsModule,
+  imports,
   middlewares: [logger],
   components: {
     button: ButtonComponent,

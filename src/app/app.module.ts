@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { NgModule, NgModuleRef } from '@angular/core'
 import { MatButtonModule } from '@angular/material/button'
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module'
@@ -30,7 +30,8 @@ import { BeagleComponentsModule } from './beagle-components.module'
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(beagleProvider: BeagleProvider) {
-    beagleProvider.start(beagleConfig)
+  constructor(beagleProvider: BeagleProvider, module: NgModuleRef<any>) {
+    // @ts-ignore
+    beagleProvider.start(beagleConfig, module)
   }
 }

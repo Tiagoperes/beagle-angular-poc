@@ -1,7 +1,15 @@
-import { Component, AfterViewInit, Input, ContentChildren, QueryList } from '@angular/core'
+import {
+  Component,
+  AfterViewInit,
+  Input,
+  ContentChildren,
+  QueryList,
+  ViewContainerRef,
+} from '@angular/core'
 import { NetworkService, HttpMethod } from '../../services/network.service'
 import { InputComponent } from '../input/input.component'
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { getContext } from 'beagle-angular'
 
 @Component({
   selector: 'app-form',
@@ -21,7 +29,11 @@ export class FormComponent implements AfterViewInit {
   model = {}
   isLoading = false
 
-  constructor(private network: NetworkService, private snackBar: MatSnackBar) {
+  constructor(
+    private network: NetworkService,
+    private snackBar: MatSnackBar,
+    private viewRef: ViewContainerRef,
+  ) {
     this.network = network
     this.snackBar = snackBar
   }
@@ -31,7 +43,6 @@ export class FormComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('=>', this.inputs)
     this.inputs.forEach(input => {
       input.onChange.subscribe(({ name, value }) => this.model[name] = value)
     })
@@ -53,6 +64,11 @@ export class FormComponent implements AfterViewInit {
 
   onReset() {
     this.inputs.forEach(input => input.reset())
+  }
+
+  testAppend() {
+    const beagleContext = getContext(this.viewRef)
+    beagleContext.append({ path: 'd803e59aadc5c3cc8def28553f17d61f/raw/e11b04a51c79499d52c4604a9524640585d1caed/beagle-example-2.json' })
   }
 
 }
