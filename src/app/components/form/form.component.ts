@@ -27,11 +27,12 @@ export class FormComponent implements AfterViewInit {
   }
 
   private isValid() {
+    console.log('=>', this.inputs)
     return this.inputs.reduce((result, input) => input.validate() && result, true)
   }
 
   ngAfterViewInit() {
-    console.log('=>', this.inputs)
+    this.inputs.changes.subscribe((...args) => console.log('QUERY RESULT CHANGED', ...args))
     this.inputs.forEach(input => {
       input.onChange.subscribe(({ name, value }) => this.model[name] = value)
     })
