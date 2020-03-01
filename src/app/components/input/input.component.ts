@@ -19,7 +19,6 @@ export class InputComponent implements AfterViewInit {
   @Input() public value?: string
   @Input() public placeholder?: string
   @Input() public validations?: Array<Validation>
-  @Input() public type?: 'number' | 'email' | 'currency' | 'text' = 'text'
 
   @Output() public onChange = new EventEmitter()
 

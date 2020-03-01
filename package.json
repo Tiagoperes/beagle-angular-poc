@@ -25,7 +25,7 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1",
-    "beagle-angular": "https://github.com/Tiagoperes/beagle-angular.git#40344269b0e6365a0305bb96fc982949ae115e07"
+    "beagle-angular": "https://github.com/ZupIT/beagle-angular.git"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.24",

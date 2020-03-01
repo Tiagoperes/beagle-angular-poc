@@ -1641,15 +1641,15 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-"beagle-angular@https://github.com/Tiagoperes/beagle-angular.git#28e6754f1072e6bac3387f2b51007e336904c5f1":
+"beagle-angular@https://github.com/ZupIT/beagle-angular.git":
   version "0.0.0"
-  resolved "https://github.com/Tiagoperes/beagle-angular.git#28e6754f1072e6bac3387f2b51007e336904c5f1"
+  resolved "https://github.com/ZupIT/beagle-angular.git#183533a44bb74b3b5266281eae37ca36db3b76b4"
   dependencies:
-    beagle-core "https://github.com/Tiagoperes/beagle-core.git#fde6703b946248d110281dca5e048f8535631cff"
+    beagle-web "https://github.com/ZupIT/beagle-web.git#092776e642979e511398042ec5f359bebc11a50b"
 
-"beagle-core@https://github.com/Tiagoperes/beagle-core.git#fde6703b946248d110281dca5e048f8535631cff":
+"beagle-web@https://github.com/ZupIT/beagle-web.git#092776e642979e511398042ec5f359bebc11a50b":
   version "0.0.0"
-  resolved "https://github.com/Tiagoperes/beagle-core.git#fde6703b946248d110281dca5e048f8535631cff"
+  resolved "https://github.com/ZupIT/beagle-web.git#092776e642979e511398042ec5f359bebc11a50b"
   dependencies:
     "@babel/runtime" "^7.8.3"
     lodash "^4.17.15"

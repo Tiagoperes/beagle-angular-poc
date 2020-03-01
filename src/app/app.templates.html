@@ -1,0 +1,61 @@
+<!-- <ng-template #teste1>
+  <p>TESTE 1</p>
+</ng-template>
+
+<ng-template #teste2>
+  <p>TESTE 2</p>
+</ng-template>
+
+<ng-template #teste3>
+  <p>TESTE 3</p>
+</ng-template>
+
+<ng-template #teste4>
+  <p>TESTE 4</p>
+</ng-template>
+
+<ng-template #teste5>
+  <p>TESTE 5</p>
+</ng-template>
+
+<ng-template #total let-numbers="numbers">
+  <ng-container *ngFor="let n of numbers">
+    <ng-container *ngTemplateOutlet="getTemplate(n)"></ng-container>
+  </ng-container>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="total;context:ctx"></ng-container> -->
+
+<ng-template #appCard let-style="style" let-children="children">
+  <app-card [style]="style">
+    <ng-container *ngFor="let child of children">
+      <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+    </ng-container>
+  </app-card>
+</ng-template>
+
+<ng-template #appForm let-url="url" let-method="method" let-successMessage="successMessage" let-errorMessage="errorMessage" let-style="style" let-children="children">
+  <app-form [url]="url" [method]="method" [successMessage]="successMessage" [errorMessage]="errorMessage" [style]="style">
+    <ng-container *ngFor="let child of children">
+      <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+    </ng-container>
+  </app-form>
+</ng-template>
+
+<ng-template #appContainer let-style="style" let-children="children">
+  <app-container [style]="style">
+    <ng-container *ngFor="let child of children">
+      <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+    </ng-container>
+  </app-container>
+</ng-template>
+
+<ng-template #appInput let-name="name" let-value="value" let-placeholder="placeholder" let-validations="validations" let-children="children">
+  <app-input [name]="name" [value]="value" [placeholder]="placeholder" [validations]="validations">
+    <ng-container *ngFor="let child of children">
+      <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+    </ng-container>
+  </app-input>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="getTemplate(tree.type);context:tree"></ng-container>

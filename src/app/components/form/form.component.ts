@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input, ContentChildren, QueryList } from '@angular/core'
+import { Component, AfterViewInit, Input, ContentChildren, QueryList, ChangeDetectorRef, NgModuleRef, DoCheck, OnInit } from '@angular/core'
 import { NetworkService, HttpMethod } from '../../services/network.service'
 import { InputComponent } from '../input/input.component'
 import { MatSnackBar } from '@angular/material/snack-bar'
@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.sass']
 })
-export class FormComponent implements AfterViewInit {
+export class FormComponent implements AfterViewInit, DoCheck, OnInit {
   @Input() public url: string
   @Input() public method: HttpMethod = 'get'
   @Input() public successMessage?: string
@@ -21,7 +21,7 @@ export class FormComponent implements AfterViewInit {
   model = {}
   isLoading = false
 
-  constructor(private network: NetworkService, private snackBar: MatSnackBar) {
+  constructor(private network: NetworkService, private snackBar: MatSnackBar, private changeDetector: ChangeDetectorRef, private module: NgModuleRef<any>) {
     this.network = network
     this.snackBar = snackBar
   }
@@ -32,6 +32,20 @@ export class FormComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log('INSIDE FORM AFTER VIEW INIT', this)
+    // this.inputs.changes.subscribe((...args) => console.log('QUERY RESULT CHANGED', ...args))
+    // this.inputs.setDirty()
+    // this.changeDetector.detectChanges()
+    // setTimeout(() => console.log(this.inputs), 100)
+    // console.log('=>', this.url, this.method)
+    // setTimeout(() => {
+    //   console.log('running change detection')
+    //   this.changeDetector.detectChanges()
+    //   console.log(this.module.componentFactoryResolver.resolveComponentFactory(InputComponent))
+    //   console.log(this.inputs)
+    //   console.log(this)
+    //   console.log(FormComponent)
+    // }, 6000)
     this.inputs.changes.subscribe((...args) => console.log('QUERY RESULT CHANGED', ...args))
     this.inputs.forEach(input => {
       input.onChange.subscribe(({ name, value }) => this.model[name] = value)
@@ -54,6 +68,14 @@ export class FormComponent implements AfterViewInit {
 
   onReset() {
     this.inputs.forEach(input => input.reset())
+  }
+
+  ngDoCheck() {
+    console.log('doing check')
+  }
+
+  ngOnInit() {
+    setTimeout(() => {console.log('timer ran doCheck()');this.ngDoCheck()}, 0);
   }
 
 }
