@@ -10,18 +10,12 @@ import { ImageComponent } from './components/image/image.component'
 import { ErrorComponent } from './components/error/error.component'
 import { LoadingComponent } from './components/loading/loading.component'
 import Schema from './schema'
-import { BeagleAngularConfig } from 'beagle-angular'
+import { createBeagleModule } from 'beagle-angular'
 
-function logger(uiTree) {
-  console.log(uiTree)
-  return uiTree
-}
-
-export const beagleConfig: BeagleAngularConfig<Schema> = {
+export const BeagleModule = createBeagleModule<Schema>({
   baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',
   schemaUrl: 'https://gist.githubusercontent.com/Tiagoperes/df605a1656f27f7c2685a3c55979029b/raw/b438cd2831b0032de37fe9a1b2c320f30a3d3c4f/beagle-schema.ts',
   module: BeagleComponentsModule,
-  middlewares: [logger],
   components: {
     button: ButtonComponent,
     container: ContainerComponent,
@@ -34,4 +28,4 @@ export const beagleConfig: BeagleAngularConfig<Schema> = {
     error: ErrorComponent,
     loading: LoadingComponent,
   },
-}
+})

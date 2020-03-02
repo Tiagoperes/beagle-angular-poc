@@ -31,7 +31,6 @@ export class FormComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('=>', this.inputs)
     this.inputs.forEach(input => {
       input.onChange.subscribe(({ name, value }) => this.model[name] = value)
     })
