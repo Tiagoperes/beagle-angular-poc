@@ -4,34 +4,9 @@ import { writeFileSync, existsSync, mkdirSync } from 'fs'
 import 'reflect-metadata'
 // @ts-ignore
 import aotConfig from './beagle.aot.json'
-// @ts-ignore
-import packageJson from './package.json'
 
 const defaultComponentModuleName = 'ComponentModule'
 const defaultConfigName = 'config'
-
-function compareVersions(first: string, second: string) {
-  const firstVersionParts = first.replace(/^[^\d]*/, '')
-  const secondVersionParts = second.replace(/^[^\d]*/, '')
-
-  for (let i = 0; i < firstVersionParts.length && i < secondVersionParts.length; i++) {
-    if (firstVersionParts[i] > secondVersionParts[i]) return 1
-    if (firstVersionParts[i] < secondVersionParts[i]) return -1
-  }
-
-  return 0
-}
-
-function getPackageVersion(packageName: string) {
-  const pkg = packageJson as any
-  const deps = {
-    ...pkg.dependencies,
-    ...pkg.devDependencies,
-    ...pkg.peerDependencies,
-  }
-
-  return deps[packageName]
-}
 
 function kebabToCamelCase(str: string) {
   return str.replace(/-\w/g, ([_, letter]) => letter.toUpperCase())
@@ -74,7 +49,8 @@ function createTemplateForComponent(selector: string, inputs: string[]) {
 
 function createCommentaryString() {
   const commentary = `
-    /* BEAGLE-ANGULAR
+    /***
+     * BEAGLE-ANGULAR
      *
      * Please, do not change this file.
      *
@@ -156,15 +132,12 @@ function createTemplateString(components: Type<any>[]) {
 }
 
 function createQueries(components: Record<string, Type<any>>) {
-  const angularVersion = getPackageVersion('@angular/core')
-  const isAngular9OrGreater = compareVersions(angularVersion, '9') >= 0
-  const options = isAngular9OrGreater ? '' : ', { static: true }'
   const componentNames = Object.keys(components)
 
   return componentNames.map((name) => {
     const selector = getComponentAnnotations(components[name]).selector
     const templateName = kebabToCamelCase(selector)
-    return `${name}: new ViewChild('${templateName}'${options})`
+    return `${name}: new ViewChild('${templateName}', { static: true })`
   })
 }
 
