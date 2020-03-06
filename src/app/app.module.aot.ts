@@ -8,8 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { InlineSVGModule } from 'ng-inline-svg'
 import { BeagleComponentsModule } from './beagle-components.module'
-import { BeagleModule } from './beagle.module'
+import { BeagleModule } from './beagle.module.aot'
 
+/*
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,3 +30,4 @@ import { BeagleModule } from './beagle.module'
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+*/
