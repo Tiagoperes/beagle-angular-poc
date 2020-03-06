@@ -10,24 +10,22 @@ import { InlineSVGModule } from 'ng-inline-svg'
 import { BeagleComponentsModule } from './beagle-components.module'
 import { BeagleModule } from './beagle.module.aot'
 
-/*
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    InlineSVGModule.forRoot(),
-    MatButtonModule,
-    BeagleComponentsModule,
-    BeagleModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
-*/
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//     NavBarComponent,
+//   ],
+//   imports: [
+//     BrowserModule,
+//     AppRoutingModule,
+//     HttpClientModule,
+//     BrowserAnimationsModule,
+//     InlineSVGModule.forRoot(),
+//     MatButtonModule,
+//     BeagleComponentsModule,
+//     BeagleModule,
+//   ],
+//   providers: [],
+//   bootstrap: [AppComponent],
+// })
+// export class AppModule {}

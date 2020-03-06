@@ -1,14 +1,15 @@
 import { Component, AfterViewInit, Input, ContentChildren, QueryList } from '@angular/core'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { BeagleComponent } from 'beagle-angular'
 import { NetworkService, HttpMethod } from '../../services/network.service'
 import { InputComponent } from '../input/input.component'
-import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.sass']
 })
-export class FormComponent implements AfterViewInit {
+export class FormComponent extends BeagleComponent implements AfterViewInit {
   @Input() public url: string
   @Input() public method: HttpMethod = 'get'
   @Input() public successMessage?: string
@@ -22,6 +23,7 @@ export class FormComponent implements AfterViewInit {
   isLoading = false
 
   constructor(private network: NetworkService, private snackBar: MatSnackBar) {
+    super()
     this.network = network
     this.snackBar = snackBar
   }
@@ -52,6 +54,10 @@ export class FormComponent implements AfterViewInit {
 
   onReset() {
     this.inputs.forEach(input => input.reset())
+  }
+
+  appendText() {
+    this.getBeagleContext().append({ path: 'd803e59aadc5c3cc8def28553f17d61f/raw/ab4d4ffde525e4e46cc72a766af84c5708847db0/beagle-example-2.json' })
   }
 
 }
