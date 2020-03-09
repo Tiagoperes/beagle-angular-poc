@@ -21,94 +21,98 @@ import {
   ChangeDetectorRef,
   Injectable,
 } from '@angular/core'
+import {
+  AbstractBeagleRemoteView,
+  AbstractBeagleProvider,
+  BeagleContextModule,
+} from 'beagle-angular'
 import { CommonModule } from '@angular/common'
-import { AbstractBeagleRemoteView, AbstractBeagleProvider } from 'beagle-angular'
 import { config } from './beagle.config'
 import { BeagleComponentsModule } from './beagle-components.module'
 
 const template = `
-  <ng-template #appButton let-action="action" let-title="title" let-primary="primary" let-children="children">
-    <app-button [action]="action" [title]="title" [primary]="primary">
+  <ng-template #appButton let-action="action" let-title="title" let-primary="primary" let-children="children" let-beagleId="__beagleId">
+    <app-button [action]="action" [title]="title" [primary]="primary" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-button>
   </ng-template>
 
-  <ng-template #appContainer let-style="style" let-children="children">
-    <app-container [style]="style">
+  <ng-template #appContainer let-style="style" let-children="children" let-beagleId="__beagleId">
+    <app-container [style]="style" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-container>
   </ng-template>
 
-  <ng-template #appForm let-url="url" let-method="method" let-successMessage="successMessage" let-errorMessage="errorMessage" let-style="style" let-children="children">
-    <app-form [url]="url" [method]="method" [successMessage]="successMessage" [errorMessage]="errorMessage" [style]="style">
+  <ng-template #appForm let-url="url" let-method="method" let-successMessage="successMessage" let-errorMessage="errorMessage" let-style="style" let-children="children" let-beagleId="__beagleId">
+    <app-form [url]="url" [method]="method" [successMessage]="successMessage" [errorMessage]="errorMessage" [style]="style" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-form>
   </ng-template>
 
-  <ng-template #appImage let-style="style" let-url="url" let-description="description" let-children="children">
-    <app-image [style]="style" [url]="url" [description]="description">
+  <ng-template #appImage let-style="style" let-url="url" let-description="description" let-children="children" let-beagleId="__beagleId">
+    <app-image [style]="style" [url]="url" [description]="description" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-image>
   </ng-template>
 
-  <ng-template #appInput let-name="name" let-value="value" let-placeholder="placeholder" let-validations="validations" let-type="type" let-children="children">
-    <app-input [name]="name" [value]="value" [placeholder]="placeholder" [validations]="validations" [type]="type">
+  <ng-template #appInput let-name="name" let-value="value" let-placeholder="placeholder" let-validations="validations" let-type="type" let-children="children" let-beagleId="__beagleId">
+    <app-input [name]="name" [value]="value" [placeholder]="placeholder" [validations]="validations" [type]="type" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-input>
   </ng-template>
 
-  <ng-template #appText let-value="value" let-children="children">
-    <app-text [value]="value">
+  <ng-template #appText let-value="value" let-children="children" let-beagleId="__beagleId">
+    <app-text [value]="value" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-text>
   </ng-template>
 
-  <ng-template #appTitle let-value="value" let-children="children">
-    <app-title [value]="value">
+  <ng-template #appTitle let-value="value" let-children="children" let-beagleId="__beagleId">
+    <app-title [value]="value" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-title>
   </ng-template>
 
-  <ng-template #appCard let-style="style" let-children="children">
-    <app-card [style]="style">
+  <ng-template #appCard let-style="style" let-children="children" let-beagleId="__beagleId">
+    <app-card [style]="style" id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-card>
   </ng-template>
 
-  <ng-template #appError  let-children="children">
-    <app-error >
+  <ng-template #appError  let-children="children" let-beagleId="__beagleId">
+    <app-error  id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-error>
   </ng-template>
 
-  <ng-template #appLoading  let-children="children">
-    <app-loading >
+  <ng-template #appLoading  let-children="children" let-beagleId="__beagleId">
+    <app-loading  id="{{beagleId}}" beagle-context [_elementId]="beagleId" [_viewId]="viewId">
       <ng-container *ngFor="let child of children">
-        <ng-container *ngTemplateOutlet="getTemplate(child.type);context:child"></ng-container>
+        <ng-container *ngTemplateOutlet="getTemplate(child._beagleType_);context:child"></ng-container>
       </ng-container>
     </app-loading>
   </ng-template>
   <ng-container #__view_container>
     <ng-container *ngIf="!!tree">
-      <ng-container *ngTemplateOutlet="getTemplate(tree.type);context:tree">
+      <ng-container *ngTemplateOutlet="getTemplate(tree._beagleType_);context:tree">
       </ng-container>
     </ng-container>
   </ng-container>
@@ -148,7 +152,7 @@ export class BeagleRemoteView extends AbstractBeagleRemoteView {
 @NgModule({
   declarations: [BeagleRemoteView],
   exports: [BeagleRemoteView],
-  imports: [CommonModule, BeagleComponentsModule],
+  imports: [CommonModule, BeagleContextModule, BeagleComponentsModule],
   providers: [BeagleProvider],
 })
 export class BeagleModule {
