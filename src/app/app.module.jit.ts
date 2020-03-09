@@ -11,26 +11,26 @@ import { InlineSVGModule } from 'ng-inline-svg'
 import { BeagleComponentsModule } from './beagle-components.module'
 import { config as beagleConfig } from './beagle.config'
 
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     NavBarComponent,
-//   ],
-//   imports: [
-//     BrowserModule,
-//     AppRoutingModule,
-//     HttpClientModule,
-//     BrowserAnimationsModule,
-//     InlineSVGModule.forRoot(),
-//     MatButtonModule,
-//     BeagleComponentsModule,
-//     BeagleModule.forRoot(),
-//   ],
-//   providers: [],
-//   bootstrap: [AppComponent],
-// })
-// export class AppModule {
-//   constructor(beagleProvider: BeagleProvider) {
-//     beagleProvider.start(beagleConfig)
-//   }
-// }
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    InlineSVGModule.forRoot(),
+    MatButtonModule,
+    BeagleComponentsModule,
+    BeagleModule.forRoot(),
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {
+  constructor(beagleProvider: BeagleProvider) {
+    beagleProvider.start(beagleConfig)
+  }
+}
