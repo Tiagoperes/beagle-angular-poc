@@ -1,17 +1,7 @@
-const BeagleViewEnginePlugin = require('./plugin.js')
+const { BeagleViewEnginePlugin } = require('beagle-angular/bin/AOT/webpack-plugin')
 
 module.exports = {
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /beagle.module.ts$/,
-  //       use: [
-  //         { loader: './loader.js' },
-  //       ]
-  //     }
-  //   ]
-  // }
   plugins: [
-    new BeagleViewEnginePlugin(),
+    new BeagleViewEnginePlugin('src/app/beagle.module.ts'),
   ]
 }
