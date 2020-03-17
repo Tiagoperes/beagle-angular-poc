@@ -1,7 +1,0 @@
-{
-  "outputPath": "./src/app/beagle.module.aot.ts",
-  "configPath": "./src/app/beagle.config.ts",
-  "configName": "config",
-  "componentModulePath": "./src/app/beagle-components.module.ts",
-  "componentModuleName": "BeagleComponentsModule"
-}

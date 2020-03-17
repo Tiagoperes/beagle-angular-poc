@@ -1,5 +1,4 @@
-import { BeagleAngularConfig } from 'beagle-angular'
-import { BeagleComponentsModule } from './beagle-components.module'
+import { BeagleModule } from 'beagle-angular'
 import { CardComponent } from './components/card/card.component'
 import { FormComponent } from './components/form/form.component'
 import { InputComponent } from './components/input/input.component'
@@ -12,10 +11,13 @@ import { ErrorComponent } from './components/error/error.component'
 import { LoadingComponent } from './components/loading/loading.component'
 import Schema from './schema'
 
-export const config: BeagleAngularConfig<Schema> = {
+@BeagleModule<Schema>({
   baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',
   schemaUrl: 'https://gist.githubusercontent.com/Tiagoperes/df605a1656f27f7c2685a3c55979029b/raw/b438cd2831b0032de37fe9a1b2c320f30a3d3c4f/beagle-schema.ts',
-  module: BeagleComponentsModule,
+  module: {
+    path: './beagle-components.module',
+    name: 'BeagleComponentsModule',
+  },
   components: {
     button: ButtonComponent,
     container: ContainerComponent,
@@ -28,4 +30,5 @@ export const config: BeagleAngularConfig<Schema> = {
     error: ErrorComponent,
     loading: LoadingComponent,
   },
-}
+})
+export class Beagle {}

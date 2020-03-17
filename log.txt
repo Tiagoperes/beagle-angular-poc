@@ -1,0 +1,1336 @@
+yarn run v1.22.0
+$ ng build
+Compilation {
+  _pluginCompat: SyncBailHook {
+    _args: [ 'options' ],
+    taps: [ [Object], [Object], [Object] ],
+    interceptors: [],
+    call: [Function: lazyCompileHook],
+    promise: [Function: lazyCompileHook],
+    callAsync: [Function: lazyCompileHook],
+    _x: undefined
+  },
+  hooks: {
+    buildModule: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    rebuildModule: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    failedModule: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    succeedModule: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    addEntry: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    failedEntry: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    succeedEntry: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    dependencyReference: SyncWaterfallHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    finishModules: AsyncSeriesHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: undefined,
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    finishRebuildingModule: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    unseal: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    seal: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    beforeChunks: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterChunks: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeDependenciesBasic: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeDependencies: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeDependenciesAdvanced: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeDependencies: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimize: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeModulesBasic: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeModules: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeModulesAdvanced: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeModules: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunksBasic: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunks: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunksAdvanced: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeChunks: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeTree: AsyncSeriesHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: undefined,
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeTree: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunkModulesBasic: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunkModules: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunkModulesAdvanced: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeChunkModules: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    shouldRecord: SyncBailHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    reviveModules: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeModuleOrder: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    advancedOptimizeModuleOrder: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    beforeModuleIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    moduleIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeModuleIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeModuleIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    reviveChunks: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunkOrder: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    beforeChunkIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunkIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeChunkIds: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    recordModules: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    recordChunks: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    beforeHash: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    contentHash: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterHash: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    recordHash: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    record: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    beforeModuleAssets: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    shouldGenerateChunkAssets: SyncBailHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    beforeChunkAssets: SyncHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    additionalChunkAssets: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    additionalAssets: AsyncSeriesHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: undefined,
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeChunkAssets: AsyncSeriesHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: undefined,
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeChunkAssets: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeAssets: AsyncSeriesHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: undefined,
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeAssets: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    needAdditionalSeal: SyncBailHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterSeal: AsyncSeriesHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: undefined,
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    chunkHash: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    moduleAsset: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    chunkAsset: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    assetPath: SyncWaterfallHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    needAdditionalPass: SyncBailHook {
+      _args: [],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    childCompiler: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    log: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    normalModuleLoader: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeExtractedChunksBasic: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeExtractedChunks: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    optimizeExtractedChunksAdvanced: SyncBailHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    afterOptimizeExtractedChunks: SyncHook {
+      _args: [Array],
+      taps: [],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    }
+  },
+  name: undefined,
+  compiler: Compiler {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    hooks: {
+      shouldEmit: [SyncBailHook],
+      done: [AsyncSeriesHook],
+      additionalPass: [AsyncSeriesHook],
+      beforeRun: [AsyncSeriesHook],
+      run: [AsyncSeriesHook],
+      emit: [AsyncSeriesHook],
+      assetEmitted: [AsyncSeriesHook],
+      afterEmit: [AsyncSeriesHook],
+      thisCompilation: [SyncHook],
+      compilation: [SyncHook],
+      normalModuleFactory: [SyncHook],
+      contextModuleFactory: [SyncHook],
+      beforeCompile: [AsyncSeriesHook],
+      compile: [SyncHook],
+      make: [AsyncParallelHook],
+      afterCompile: [AsyncSeriesHook],
+      watchRun: [AsyncSeriesHook],
+      failed: [SyncHook],
+      invalid: [SyncHook],
+      watchClose: [SyncHook],
+      infrastructureLog: [SyncBailHook],
+      environment: [SyncHook],
+      afterEnvironment: [SyncHook],
+      afterPlugins: [SyncHook],
+      afterResolvers: [SyncHook],
+      entryOption: [SyncBailHook],
+      infrastructurelog: [SyncBailHook]
+    },
+    name: undefined,
+    parentCompilation: undefined,
+    outputPath: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+    outputFileSystem: NodeOutputFileSystem {
+      mkdirp: [Function],
+      mkdir: [Function: bound mkdir],
+      rmdir: [Function: bound rmdir],
+      unlink: [Function: bound unlink],
+      writeFile: [Function: bound writeFile],
+      join: [Function: bound join]
+    },
+    inputFileSystem: VirtualFileSystemDecorator {
+      _inputFileSystem: [CachedInputFileSystem],
+      _webpackCompilerHost: [WebpackCompilerHost]
+    },
+    recordsInputPath: undefined,
+    recordsOutputPath: undefined,
+    records: {},
+    removedFiles: Set {},
+    fileTimestamps: Map {},
+    contextTimestamps: Map {},
+    resolverFactory: ResolverFactory {
+      _pluginCompat: [SyncBailHook],
+      hooks: [Object],
+      cache2: Map {}
+    },
+    infrastructureLogger: [Function: logger],
+    resolvers: { normal: [Object], loader: [Object], context: [Object] },
+    options: {
+      mode: 'development',
+      devtool: false,
+      profile: false,
+      resolve: [Object],
+      resolveLoader: [Object],
+      context: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc',
+      entry: [Object],
+      output: [Object],
+      watch: false,
+      watchOptions: [Object],
+      performance: [Object],
+      module: [Object],
+      optimization: [Object],
+      plugins: [Array],
+      node: false,
+      stats: [Object],
+      cache: true,
+      target: 'web',
+      infrastructureLogging: [Object]
+    },
+    context: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc',
+    requestShortener: RequestShortener {
+      currentDirectoryRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle\/beagle\-angular\-poc/g,
+      parentDirectoryRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle/g,
+      buildinsAsModule: true,
+      buildinsRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle\/beagle\-angular\-poc\/node_modules\/webpack/g,
+      cache: Map {}
+    },
+    running: true,
+    watchMode: false,
+    _assetEmittingSourceCache: WeakMap { <items unknown> },
+    _assetEmittingWrittenFiles: Map {},
+    watchFileSystem: VirtualWatchFileSystemDecorator {
+      inputFileSystem: [VirtualFileSystemDecorator],
+      watcherOptions: [Object],
+      watcher: [EventEmitter],
+      _virtualInputFileSystem: [VirtualFileSystemDecorator],
+      _replacements: Map {}
+    },
+    dependencies: undefined
+  },
+  resolverFactory: ResolverFactory {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    hooks: { resolveOptions: [HookMap], resolver: [HookMap] },
+    cache2: Map {}
+  },
+  inputFileSystem: VirtualFileSystemDecorator {
+    _inputFileSystem: CachedInputFileSystem {
+      fileSystem: NodeJsInputFileSystem {},
+      _statStorage: [Storage],
+      _readdirStorage: [Storage],
+      _readFileStorage: [Storage],
+      _readJsonStorage: [Storage],
+      _readlinkStorage: [Storage],
+      _stat: [Function: bound bound ],
+      _statSync: [Function: bound bound ],
+      _readdir: [Function: bound readdir],
+      _readdirSync: [Function: bound readdirSync],
+      _readFile: [Function: bound bound readFile],
+      _readFileSync: [Function: bound bound readFileSync],
+      _readJson: [Function (anonymous)],
+      _readJsonSync: [Function (anonymous)],
+      _readlink: [Function: bound bound readlink],
+      _readlinkSync: [Function: bound bound readlinkSync]
+    },
+    _webpackCompilerHost: WebpackCompilerHost {
+      _options: [Object],
+      cacheSourceFiles: true,
+      directTemplateLoading: true,
+      ngccProcessor: undefined,
+      moduleResolutionCache: [Object],
+      _changedFiles: Set {},
+      _readResourceFiles: Set {},
+      _sourceFileCache: Map {},
+      _virtualFileExtensions: [Array],
+      _virtualStyleFileExtensions: [Array],
+      _syncHost: [SyncDelegateHost],
+      _innerMemoryHost: [SimpleMemoryHost],
+      _memoryHost: [SyncDelegateHost],
+      _basePath: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc'
+    }
+  },
+  requestShortener: RequestShortener {
+    currentDirectoryRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle\/beagle\-angular\-poc/g,
+    parentDirectoryRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle/g,
+    buildinsAsModule: true,
+    buildinsRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle\/beagle\-angular\-poc\/node_modules\/webpack/g,
+    cache: Map {}
+  },
+  options: {
+    mode: 'development',
+    devtool: false,
+    profile: false,
+    resolve: {
+      extensions: [Array],
+      symlinks: false,
+      modules: [Array],
+      alias: [Object],
+      mainFields: [Array],
+      unsafeCache: true,
+      mainFiles: [Array],
+      aliasFields: [Array],
+      cacheWithContext: false
+    },
+    resolveLoader: {
+      modules: [Array],
+      unsafeCache: true,
+      mainFields: [Array],
+      extensions: [Array],
+      mainFiles: [Array],
+      cacheWithContext: false
+    },
+    context: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc',
+    entry: {
+      main: [Array],
+      'polyfills-es5': [Array],
+      polyfills: [Array],
+      styles: [Array]
+    },
+    output: {
+      futureEmitAssets: true,
+      path: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+      publicPath: undefined,
+      filename: '[name]-es2015.js',
+      crossOriginLoading: false,
+      chunkFilename: '[name]-es2015.js',
+      webassemblyModuleFilename: '[modulehash].module.wasm',
+      library: '',
+      hotUpdateFunction: 'webpackHotUpdate',
+      jsonpFunction: 'webpackJsonp',
+      chunkCallbackName: 'webpackChunk',
+      globalObject: 'window',
+      devtoolNamespace: '',
+      libraryTarget: 'var',
+      pathinfo: true,
+      sourceMapFilename: '[file].map[query]',
+      hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+      hotUpdateMainFilename: '[hash].hot-update.json',
+      jsonpScriptType: false,
+      chunkLoadTimeout: 120000,
+      hashFunction: 'md4',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+      devtoolLineToLine: false,
+      strictModuleExceptionHandling: false
+    },
+    watch: false,
+    watchOptions: { poll: undefined },
+    performance: { hints: false, maxAssetSize: 250000, maxEntrypointSize: 250000 },
+    module: {
+      strictExportPresence: true,
+      rules: [Array],
+      unknownContextRequest: '.',
+      unknownContextRegExp: false,
+      unknownContextRecursive: true,
+      unknownContextCritical: true,
+      exprContextRequest: '.',
+      exprContextRegExp: false,
+      exprContextRecursive: true,
+      exprContextCritical: true,
+      wrappedContextRegExp: /.*/,
+      wrappedContextRecursive: true,
+      wrappedContextCritical: false,
+      strictThisContextOnImports: false,
+      unsafeCache: true,
+      defaultRules: [Array]
+    },
+    optimization: {
+      noEmitOnErrors: true,
+      minimizer: [Array],
+      runtimeChunk: [Object],
+      splitChunks: [Object],
+      removeAvailableModules: false,
+      removeEmptyChunks: true,
+      mergeDuplicateChunks: true,
+      flagIncludedChunks: false,
+      occurrenceOrder: false,
+      sideEffects: false,
+      providedExports: true,
+      usedExports: false,
+      concatenateModules: false,
+      checkWasmTypes: false,
+      mangleWasmImports: false,
+      namedModules: true,
+      hashedModuleIds: false,
+      namedChunks: true,
+      portableRecords: false,
+      minimize: false,
+      nodeEnv: 'development'
+    },
+    plugins: [
+      [ContextReplacementPlugin],
+      [CopyPlugin],
+      [CircularDependencyPlugin],
+      NamedLazyChunksPlugin {},
+      [SourceMapDevToolPlugin],
+      [NgBuildAnalyticsPlugin],
+      [AngularCompilerPlugin],
+      HelloWorldPlugin {}
+    ],
+    node: false,
+    stats: {
+      colors: true,
+      hash: true,
+      timings: true,
+      chunks: true,
+      chunkModules: false,
+      children: false,
+      modules: false,
+      reasons: false,
+      warnings: true,
+      errors: true,
+      assets: true,
+      version: false,
+      errorDetails: false,
+      moduleTrace: false
+    },
+    cache: true,
+    target: 'web',
+    infrastructureLogging: { level: 'info', debug: false }
+  },
+  outputOptions: {
+    futureEmitAssets: true,
+    path: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+    publicPath: undefined,
+    filename: '[name]-es2015.js',
+    crossOriginLoading: false,
+    chunkFilename: '[name]-es2015.js',
+    webassemblyModuleFilename: '[modulehash].module.wasm',
+    library: '',
+    hotUpdateFunction: 'webpackHotUpdate',
+    jsonpFunction: 'webpackJsonp',
+    chunkCallbackName: 'webpackChunk',
+    globalObject: 'window',
+    devtoolNamespace: '',
+    libraryTarget: 'var',
+    pathinfo: true,
+    sourceMapFilename: '[file].map[query]',
+    hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+    hotUpdateMainFilename: '[hash].hot-update.json',
+    jsonpScriptType: false,
+    chunkLoadTimeout: 120000,
+    hashFunction: 'md4',
+    hashDigest: 'hex',
+    hashDigestLength: 20,
+    devtoolLineToLine: false,
+    strictModuleExceptionHandling: false
+  },
+  bail: undefined,
+  profile: false,
+  performance: { hints: false, maxAssetSize: 250000, maxEntrypointSize: 250000 },
+  mainTemplate: MainTemplate {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    outputOptions: {
+      futureEmitAssets: true,
+      path: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+      publicPath: undefined,
+      filename: '[name]-es2015.js',
+      crossOriginLoading: false,
+      chunkFilename: '[name]-es2015.js',
+      webassemblyModuleFilename: '[modulehash].module.wasm',
+      library: '',
+      hotUpdateFunction: 'webpackHotUpdate',
+      jsonpFunction: 'webpackJsonp',
+      chunkCallbackName: 'webpackChunk',
+      globalObject: 'window',
+      devtoolNamespace: '',
+      libraryTarget: 'var',
+      pathinfo: true,
+      sourceMapFilename: '[file].map[query]',
+      hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+      hotUpdateMainFilename: '[hash].hot-update.json',
+      jsonpScriptType: false,
+      chunkLoadTimeout: 120000,
+      hashFunction: 'md4',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+      devtoolLineToLine: false,
+      strictModuleExceptionHandling: false
+    },
+    hooks: {
+      renderManifest: [SyncWaterfallHook],
+      modules: [SyncWaterfallHook],
+      moduleObj: [SyncWaterfallHook],
+      requireEnsure: [SyncWaterfallHook],
+      bootstrap: [SyncWaterfallHook],
+      localVars: [SyncWaterfallHook],
+      require: [SyncWaterfallHook],
+      requireExtensions: [SyncWaterfallHook],
+      beforeStartup: [SyncWaterfallHook],
+      startup: [SyncWaterfallHook],
+      afterStartup: [SyncWaterfallHook],
+      render: [SyncWaterfallHook],
+      renderWithEntry: [SyncWaterfallHook],
+      moduleRequire: [SyncWaterfallHook],
+      addModule: [SyncWaterfallHook],
+      currentHash: [SyncWaterfallHook],
+      assetPath: [SyncWaterfallHook],
+      hash: [SyncHook],
+      hashForChunk: [SyncHook],
+      globalHashPaths: [SyncWaterfallHook],
+      globalHash: [SyncBailHook],
+      hotBootstrap: [SyncWaterfallHook]
+    },
+    requireFn: '__webpack_require__'
+  },
+  chunkTemplate: ChunkTemplate {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    outputOptions: {
+      futureEmitAssets: true,
+      path: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+      publicPath: undefined,
+      filename: '[name]-es2015.js',
+      crossOriginLoading: false,
+      chunkFilename: '[name]-es2015.js',
+      webassemblyModuleFilename: '[modulehash].module.wasm',
+      library: '',
+      hotUpdateFunction: 'webpackHotUpdate',
+      jsonpFunction: 'webpackJsonp',
+      chunkCallbackName: 'webpackChunk',
+      globalObject: 'window',
+      devtoolNamespace: '',
+      libraryTarget: 'var',
+      pathinfo: true,
+      sourceMapFilename: '[file].map[query]',
+      hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+      hotUpdateMainFilename: '[hash].hot-update.json',
+      jsonpScriptType: false,
+      chunkLoadTimeout: 120000,
+      hashFunction: 'md4',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+      devtoolLineToLine: false,
+      strictModuleExceptionHandling: false
+    },
+    hooks: {
+      renderManifest: [SyncWaterfallHook],
+      modules: [SyncWaterfallHook],
+      render: [SyncWaterfallHook],
+      renderWithEntry: [SyncWaterfallHook],
+      hash: [SyncHook],
+      hashForChunk: [SyncHook]
+    }
+  },
+  hotUpdateChunkTemplate: HotUpdateChunkTemplate {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    outputOptions: {
+      futureEmitAssets: true,
+      path: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+      publicPath: undefined,
+      filename: '[name]-es2015.js',
+      crossOriginLoading: false,
+      chunkFilename: '[name]-es2015.js',
+      webassemblyModuleFilename: '[modulehash].module.wasm',
+      library: '',
+      hotUpdateFunction: 'webpackHotUpdate',
+      jsonpFunction: 'webpackJsonp',
+      chunkCallbackName: 'webpackChunk',
+      globalObject: 'window',
+      devtoolNamespace: '',
+      libraryTarget: 'var',
+      pathinfo: true,
+      sourceMapFilename: '[file].map[query]',
+      hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+      hotUpdateMainFilename: '[hash].hot-update.json',
+      jsonpScriptType: false,
+      chunkLoadTimeout: 120000,
+      hashFunction: 'md4',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+      devtoolLineToLine: false,
+      strictModuleExceptionHandling: false
+    },
+    hooks: {
+      modules: [SyncWaterfallHook],
+      render: [SyncWaterfallHook],
+      hash: [SyncHook]
+    }
+  },
+  runtimeTemplate: RuntimeTemplate {
+    outputOptions: {
+      futureEmitAssets: true,
+      path: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc/dist/beagle-angular',
+      publicPath: undefined,
+      filename: '[name]-es2015.js',
+      crossOriginLoading: false,
+      chunkFilename: '[name]-es2015.js',
+      webassemblyModuleFilename: '[modulehash].module.wasm',
+      library: '',
+      hotUpdateFunction: 'webpackHotUpdate',
+      jsonpFunction: 'webpackJsonp',
+      chunkCallbackName: 'webpackChunk',
+      globalObject: 'window',
+      devtoolNamespace: '',
+      libraryTarget: 'var',
+      pathinfo: true,
+      sourceMapFilename: '[file].map[query]',
+      hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+      hotUpdateMainFilename: '[hash].hot-update.json',
+      jsonpScriptType: false,
+      chunkLoadTimeout: 120000,
+      hashFunction: 'md4',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+      devtoolLineToLine: false,
+      strictModuleExceptionHandling: false
+    },
+    requestShortener: RequestShortener {
+      currentDirectoryRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle\/beagle\-angular\-poc/g,
+      parentDirectoryRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle/g,
+      buildinsAsModule: true,
+      buildinsRegExp: /(^|!)\/Users\/tiago\/Documents\/Projects\/Beagle\/beagle\-angular\-poc\/node_modules\/webpack/g,
+      cache: Map {}
+    }
+  },
+  moduleTemplates: {
+    javascript: ModuleTemplate {
+      _pluginCompat: [SyncBailHook],
+      runtimeTemplate: [RuntimeTemplate],
+      type: 'javascript',
+      hooks: [Object]
+    },
+    webassembly: ModuleTemplate {
+      _pluginCompat: [SyncBailHook],
+      runtimeTemplate: [RuntimeTemplate],
+      type: 'webassembly',
+      hooks: [Object]
+    }
+  },
+  semaphore: Semaphore {
+    available: 100,
+    waiters: [],
+    _continue: [Function: bound _continue]
+  },
+  entries: [],
+  _preparedEntrypoints: [],
+  entrypoints: Map {},
+  chunks: [],
+  chunkGroups: [],
+  namedChunkGroups: Map {},
+  namedChunks: Map {},
+  modules: [],
+  _modules: Map {},
+  cache: null,
+  records: {},
+  additionalChunkAssets: [],
+  assets: {},
+  errors: [],
+  warnings: [],
+  children: [],
+  logging: Map {},
+  dependencyFactories: Map {},
+  dependencyTemplates: Map { 'hash' => '' },
+  childrenCounters: {},
+  usedChunkIds: null,
+  usedModuleIds: null,
+  fileTimestamps: Map {},
+  contextTimestamps: Map {},
+  compilationDependencies: Set {},
+  _buildingModules: Map {},
+  _rebuildingModules: Map {},
+  emittedAssets: Set {}
+}
+----------------------
+{
+  normalModuleFactory: NormalModuleFactory {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    hooks: {
+      resolver: [SyncWaterfallHook],
+      factory: [SyncWaterfallHook],
+      beforeResolve: [AsyncSeriesWaterfallHook],
+      afterResolve: [AsyncSeriesWaterfallHook],
+      createModule: [SyncBailHook],
+      module: [SyncWaterfallHook],
+      createParser: [HookMap],
+      parser: [HookMap],
+      createGenerator: [HookMap],
+      generator: [HookMap]
+    },
+    resolverFactory: ResolverFactory {
+      _pluginCompat: [SyncBailHook],
+      hooks: [Object],
+      cache2: Map {}
+    },
+    ruleSet: RuleSet { references: [Object: null prototype], rules: [Array] },
+    cachePredicate: [Function: bound Boolean],
+    context: '/Users/tiago/Documents/Projects/Beagle/beagle-angular-poc',
+    parserCache: [Object: null prototype] {},
+    generatorCache: [Object: null prototype] {}
+  },
+  contextModuleFactory: ContextModuleFactory {
+    _pluginCompat: SyncBailHook {
+      _args: [Array],
+      taps: [Array],
+      interceptors: [],
+      call: [Function: lazyCompileHook],
+      promise: [Function: lazyCompileHook],
+      callAsync: [Function: lazyCompileHook],
+      _x: undefined
+    },
+    hooks: {
+      beforeResolve: [AsyncSeriesWaterfallHook],
+      afterResolve: [AsyncSeriesWaterfallHook],
+      contextModuleFiles: [SyncWaterfallHook],
+      alternatives: [AsyncSeriesWaterfallHook]
+    },
+    resolverFactory: ResolverFactory {
+      _pluginCompat: [SyncBailHook],
+      hooks: [Object],
+      cache2: Map {}
+    }
+  },
+  compilationDependencies: Set {}
+}
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {polyfills} polyfills-es2015.js, polyfills-es2015.js.map (polyfills) 269 kB [initial] [rendered]
+chunk {polyfills-es5} polyfills-es5.js, polyfills-es5.js.map (polyfills-es5) 697 kB [initial] [rendered]
+chunk {runtime} runtime-es2015.js, runtime-es2015.js.map (runtime) 6.16 kB [entry] [rendered]
+chunk {runtime} runtime-es5.js, runtime-es5.js.map (runtime) 6.16 kB [entry] [rendered]
+chunk {main} main-es2015.js, main-es2015.js.map (main) 82.4 kB [initial] [rendered]
+chunk {main} main-es5.js, main-es5.js.map (main) 89.8 kB [initial] [rendered]
+chunk {styles} styles-es2015.js, styles-es2015.js.map (styles) 175 kB [initial] [rendered]
+chunk {styles} styles-es5.js, styles-es5.js.map (styles) 177 kB [initial] [rendered]
+chunk {vendor} vendor-es2015.js, vendor-es2015.js.map (vendor) 5.25 MB [initial] [rendered]
+chunk {vendor} vendor-es5.js, vendor-es5.js.map (vendor) 5.56 MB [initial] [rendered]
+Date: 2020-03-17T13:32:40.580Z - Hash: dd732c7ec825fcb76301 - Time: 12215ms
+Done in 17.85s.

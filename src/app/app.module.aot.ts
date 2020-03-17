@@ -8,24 +8,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { InlineSVGModule } from 'ng-inline-svg'
 import { BeagleComponentsModule } from './beagle-components.module'
-import { BeagleModule } from './beagle.module.aot'
+import { Beagle } from './beagle.module'
 
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     NavBarComponent,
-//   ],
-//   imports: [
-//     BrowserModule,
-//     AppRoutingModule,
-//     HttpClientModule,
-//     BrowserAnimationsModule,
-//     InlineSVGModule.forRoot(),
-//     MatButtonModule,
-//     BeagleComponentsModule,
-//     BeagleModule,
-//   ],
-//   providers: [],
-//   bootstrap: [AppComponent],
-// })
-// export class AppModule {}
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    InlineSVGModule.forRoot(),
+    MatButtonModule,
+    BeagleComponentsModule,
+    Beagle,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
