@@ -32,7 +32,13 @@
               "src/styles.sass"
             ],
             "scripts": [],
-            "preserveSymlinks": true
+            "preserveSymlinks": true,
+            "fileReplacements": [
+              {
+                "replace": "src/app/beagle.module.ts",
+                "with": "src/app/.beagle.module.generated.ts"
+              }
+            ]
           },
           "configurations": {
             "production": {
